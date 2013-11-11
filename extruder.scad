@@ -3,7 +3,7 @@ use <MCAD/metric_fastners.scad>
 
 tooth_width=4;
 tooth_height=7;
-small_wheel_tooth_count=10;
+small_wheel_tooth_count=12;
 big_wheel_tooth_count=50;
 
 pi=3.14;
@@ -157,4 +157,5 @@ module extruder_print(){
 	translate([-r_big_outer -thikness -4 ,x_tot /2,0]) big_pinion();
 	translate([+r_small_outer +4 ,x_tot /2,0]) small_pinion();
 }
+
 
