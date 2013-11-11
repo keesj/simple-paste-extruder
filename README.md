@@ -11,3 +11,8 @@ cd simple-paste-extruder
 git submodule init
 
 before you can render the script in openscad.
+
+The code uses the MCAD library containing LGPL code it also used 
+the Rack and pinion gears. that part of the code is GPL
+
+
