@@ -107,7 +107,7 @@ difference() {
 		 	translate([x_tot/2,thikness + bolt_length + 4,base_height/2])rotate([90,angle,0]) stepper_mount(); 
 			/* connection between the holder and the base */
 			translate([dx * sin(angle),0 ,dx * cos(angle)])
-		 	translate([x_tot/2,thikness + bolt_length + 4,base_height/2])rotate([90,angle,0]) translate([-10,-38,0]) cube([20,30,4]); 
+		 	translate([x_tot/2,thikness + bolt_length + 4,base_height/2])rotate([90,angle,0]) translate([-10,-38,0]) cube([20,25,4]); 
 		}
 		}
 	
@@ -121,7 +121,7 @@ difference() {
 //just 3 circles where the hole are supposed to be
 //we move them around a bit to 
 module stepper_holder(){
-	for(i=[-2:2]){
+	for(i=[-2:4]){
 		translate([0,8 +i,0]) circle(r=4.5);// the hole for the gear(not used in this design
 		translate([17.5,i,0]) circle(r=2.4);//left hole for the nut
 		translate([-17.5,i,0]) circle(r=2.4);//right hole for the nut
@@ -131,10 +131,15 @@ module stepper_holder(){
 
 module stepper_mount() {
 	linear_extrude(height=4) translate([0,8,0]) rotate([0,0,180]) difference() {
-		circle(r=23); // Create the outer circle
+		union() {
+			circle(r=25); // Create the outer circle
+			translate([17.5,2,0]) circle(r=10);//add some rounding here for the hole 
+			translate([-17.5,2,0]) circle(r=10);//add some rounding ro the right hole
+		}
 
 		//make it hollow by eating "creating a tooth"
 		translate([-28/2,-28,0]) square([28,28]);		
+		translate([-30,-27 - 10,0]) square([60,28]);//remove unneeded parts
 
 		stepper_holder();
 	}
