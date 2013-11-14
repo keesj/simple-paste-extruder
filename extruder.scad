@@ -157,12 +157,22 @@ module extruder_view() {
 	}
 }
 
-module extruder_print(){
+module print_base(){
 	rotate([0,0,90])base();
-	translate([-r_big_outer -thikness -4 ,x_tot /2,0]) big_pinion();
-	translate([+r_small_outer +6 ,x_tot /2,0]) small_pinion(small_wheel_tooth_count);
-	translate([+r_small_outer +6  ,x_tot /2 + 20,0]) small_pinion(small_wheel_tooth_count +1); //Create two more ponion to allow play with 
-	translate([+r_small_outer +6  ,x_tot /2 - 20,0]) small_pinion(small_wheel_tooth_count +2); //less teeth
 }
 
-extruder_view();
+module print_big_pinion(){
+	translate([-r_big_outer -thikness -4 ,x_tot /2,0]) big_pinion();
+}
+module print_small_pinion(){
+	translate([+r_small_outer +6 ,x_tot /2,0]) small_pinion(small_wheel_tooth_count);
+	//translate([+r_small_outer +6  ,x_tot /2 + 20,0]) small_pinion(small_wheel_tooth_count +1); //Create two more ponion to allow play with 
+	////translate([+r_small_outer +6  ,x_tot /2 - 20,0]) small_pinion(small_wheel_tooth_count +2); //less teeth
+}
+
+module extruder_print_all(){
+	print_base();
+	print_big_pinion();
+	print_small_pinion();
+}
+

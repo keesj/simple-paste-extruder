@@ -1,3 +1,3 @@
 use <extruder.scad>
 
-extruder_print();
+print_base();
