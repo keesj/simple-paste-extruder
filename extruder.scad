@@ -53,7 +53,7 @@ module small_pinion(teeth_count) {
    | |                                    | |
   a| |b                                   | |
    | |                                    | |
-	| |_________              _____________| |
+   | |_________              _____________| |
    |___________|            |_______________|
                             
 
@@ -175,4 +175,3 @@ module extruder_print_all(){
 	print_big_pinion();
 	print_small_pinion();
 }
-

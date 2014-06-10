@@ -9,7 +9,16 @@ design it only use very few non printed part that are widely available mainly:
 * M8 Nut
 * Stepper motor of type 28BYJ-48 + driver (about 5 euro http://www.vanallesenmeer.nl/5v-stappenmotor-met-ULN2003-driver- )
 
+
+
 http://www.thingiverse.com/thing:181833
 
 The code uses the MCAD library containing LGPL code it also used 
+
+do a
+```
+ git submodule update MCAD
+```
+
 the Rack and pinion gears. that part of the code is GPL
+
