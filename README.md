@@ -17,7 +17,7 @@ The code uses the MCAD library containing LGPL code it also used
 
 do a
 ```
- git submodule update MCAD
+ git submodule update --init
 ```
 
 the Rack and pinion gears. that part of the code is GPL
